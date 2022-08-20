@@ -26,6 +26,7 @@ EXT_RECURSIONGUARD_VERSION="0.1.0"
 EXT_LIBDEFLATE_VERSION="0.1.0"
 EXT_MORTON_VERSION="0.1.2"
 EXT_XXHASH_VERSION="0.1.1"
+EXT_PHPREDIS_VERSION="5.3.7"
 
 function write_out {
 	echo "[$1] $2"
@@ -848,6 +849,8 @@ get_github_extension "libdeflate" "$EXT_LIBDEFLATE_VERSION" "pmmp" "ext-libdefla
 get_github_extension "morton" "$EXT_MORTON_VERSION" "pmmp" "ext-morton"
 
 get_github_extension "xxhash" "$EXT_XXHASH_VERSION" "pmmp" "ext-xxhash"
+
+get_github_extension "phpredis" "$EXT_PHPREDIS_VERSION" "phpredis" "phpredis"
 
 echo -n "[PHP]"
 
