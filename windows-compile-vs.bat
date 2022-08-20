@@ -34,6 +34,7 @@ set PHP_MORTON_VER=0.1.2
 set PHP_LIBDEFLATE_VER=0.1.0
 set PHP_XXHASH_VER=0.1.1
 set PHP_XDEBUG_VER=3.1.5
+set PHP_REDIS_VER=5.3.7
 
 set script_path=%~dp0
 set log_file=%script_path%compile.log
@@ -203,6 +204,7 @@ call :get-extension-zip-from-github "morton"                "%PHP_MORTON_VER%"  
 call :get-extension-zip-from-github "libdeflate"            "%PHP_LIBDEFLATE_VER%"            "pmmp"     "ext-libdeflate"          || exit 1
 call :get-extension-zip-from-github "xxhash"                "%PHP_XXHASH_VER%"                "pmmp"     "ext-xxhash"              || exit 1
 call :get-extension-zip-from-github "xdebug"                "%PHP_XDEBUG_VER%"                "xdebug"   "xdebug"                  || exit 1
+call :get-extension-zip-from-github "phpredis"                "%PHP_REDIS_VER%"                "phpredis"   "phpredis"                  || exit 1
 
 call :pm-echo " - crypto: downloading %PHP_CRYPTO_VER%..."
 git clone https://github.com/bukka/php-crypto.git crypto >>"%log_file%" 2>&1 || exit 1
@@ -251,6 +253,7 @@ call configure^
  --enable-xmlreader^
  --enable-xmlwriter^
  --enable-xxhash^
+ --enable-phpredis^
  --enable-zip^
  --enable-zlib^
  --with-bz2=shared^
